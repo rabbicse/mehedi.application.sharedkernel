@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mehedi.Application.SharedKernel", "src\Mehedi.Application.SharedKernel\Mehedi.Application.SharedKernel.csproj", "{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E616BC31-A54D-4C60-A9CC-846BC423D4C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1DD0A7BA-0EDC-409A-8247-8694D082A722}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08} = {E616BC31-A54D-4C60-A9CC-846BC423D4C5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7FF9A7F-74C2-413E-AFBE-5E0FF6DBF374}
+	EndGlobalSection
+EndGlobal

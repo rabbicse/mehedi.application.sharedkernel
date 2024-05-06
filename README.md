@@ -10,6 +10,17 @@ Some useful base classes and interfaces, mainly used with the Application layer 
 - MediatR
 - xUnit
 
+## Packaging
+To pack nuget package write the following command
+```
+dotnet pack
+```
+
+To publish package of Mehedi.Application.SharedKernel.1.0.0.nupkg write the following command
+```
+dotnet nuget push .\bin\Release\Mehedi.Application.SharedKernel.1.0.0.nupkg --api-key <api-key> --source https://api.nuget.org/v3/index.json
+```
+
 ## References
 - [Ardalis.SharedKernel](https://github.com/ardalis/Ardalis.SharedKernel)
 - [Clean Architecture Solution Template](https://github.com/jasontaylordev/CleanArchitecture)
