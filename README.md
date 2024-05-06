@@ -1,5 +1,5 @@
-[![Nuget](https://img.shields.io/nuget/v/Mehedi.Core.SharedKernel)](https://www.nuget.org/packages/Mehedi.Core.SharedKernel/)
-[![Nuget](https://img.shields.io/nuget/dt/Mehedi.Core.SharedKernel)](https://www.nuget.org/packages/Mehedi.Core.SharedKernel/)
+[![Nuget](https://img.shields.io/nuget/v/Mehedi.Application.SharedKernel)](https://www.nuget.org/packages/Mehedi.Application.SharedKernel/)
+[![Nuget](https://img.shields.io/nuget/dt/Mehedi.Application.SharedKernel)](https://www.nuget.org/packages/Mehedi.Application.SharedKernel/)
 
 # Mehedi.Application.SharedKernel
 Some useful base classes and interfaces, mainly used with the Application layer inside CleanArchitecture template. Also, a template to make your own Application layer SharedKernel nuget package.
@@ -9,6 +9,13 @@ Some useful base classes and interfaces, mainly used with the Application layer 
 - C#
 - MediatR
 - xUnit
+
+## Prerequisites
+- MediatR (>= 12.2.0)
+- Microsoft.Extensions.Configuration.Abstractions (>= 8.0.0)
+- Microsoft.Extensions.Logging (>= 8.0.0)
+- Newtonsoft.Json (>= 13.0.3)
+- Mehedi.Core.SharedKernel (>= 1.0.0)
 
 ## Packaging
 To pack nuget package write the following command
