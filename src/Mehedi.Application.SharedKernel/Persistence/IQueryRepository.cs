@@ -16,7 +16,7 @@ public interface IQueryRepository<TQueryModel, in TKey>
     /// </summary>
     /// <typeparam name="TQueryModel"></typeparam>
     /// <returns></returns>
-    Task<IEnumerable<TQueryModel>> GetAllCollectionAsync<TQueryModel>() where TQueryModel : IQueryModel;
+    Task<IEnumerable<TQueryModel>> GetAllCollectionAsync();
     /// <summary>
     /// Gets the collection for the specified query model with page.
     /// </summary>
@@ -24,7 +24,7 @@ public interface IQueryRepository<TQueryModel, in TKey>
     /// <param name="start"></param>
     /// <param name="pageSize"></param>
     /// <returns></returns>
-    Task<IEnumerable<TQueryModel>> GetCollectionAsync<TQueryModel>(int start = 0, int pageSize = 100) where TQueryModel : IQueryModel;
+    Task<IEnumerable<TQueryModel>> GetCollectionAsync(int start = 0, int pageSize = 100);
     /// <summary>
     /// Gets the Query Model by id.
     /// </summary>
@@ -32,5 +32,5 @@ public interface IQueryRepository<TQueryModel, in TKey>
     /// <typeparam name="TKey"></typeparam>
     /// <param name="id"></param>
     /// <returns></returns>
-    Task<TQueryModel?> GetByIdAsync<TQueryModel, TKey>(TKey id) where TQueryModel : IQueryModel;
+    Task<TQueryModel?> GetByIdAsync(TKey id);
 }
