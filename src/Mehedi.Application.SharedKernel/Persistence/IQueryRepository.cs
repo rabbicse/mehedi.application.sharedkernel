@@ -12,9 +12,25 @@ public interface IQueryRepository<TQueryModel, in TKey>
     where TKey : IEquatable<TKey>
 {
     /// <summary>
-    /// Gets the query model by its ID asynchronously.
+    /// Gets the collection for the specified query model.
     /// </summary>
-    /// <param name="id">The ID of the query model.</param>
-    /// <returns>The task representing the asynchronous operation, returning the query model.</returns>
-    Task<TQueryModel> GetByIdAsync(TKey id);
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <returns></returns>
+    Task<IEnumerable<TQueryModel>> GetAllCollectionAsync<TQueryModel>() where TQueryModel : IQueryModel;
+    /// <summary>
+    /// Gets the collection for the specified query model with page.
+    /// </summary>
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <param name="start"></param>
+    /// <param name="pageSize"></param>
+    /// <returns></returns>
+    Task<IEnumerable<TQueryModel>> GetCollectionAsync<TQueryModel>(int start = 0, int pageSize = 100) where TQueryModel : IQueryModel;
+    /// <summary>
+    /// Gets the Query Model by id.
+    /// </summary>
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <typeparam name="TKey"></typeparam>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task<TQueryModel?> GetByIdAsync<TQueryModel, TKey>(TKey id) where TQueryModel : IQueryModel;
 }
