@@ -1,5 +1,4 @@
 ﻿using Mehedi.Core.SharedKernel;
-using System.Net;
 
 namespace Mehedi.Application.SharedKernel.Persistence;
 
@@ -9,12 +8,6 @@ namespace Mehedi.Application.SharedKernel.Persistence;
 /// </summary>
 public interface IReadDbContext
 {
-    /// <summary>
-    /// Gets the collection for the specified query model.
-    /// </summary>
-    /// <typeparam name="TQueryModel"></typeparam>
-    /// <returns></returns>
-    Task<IEnumerable<TQueryModel>> GetAllCollectionAsync<TQueryModel>() where TQueryModel : IQueryModel;
     /// <summary>
     /// Gets the collection for the specified query model with page.
     /// </summary>
@@ -32,18 +25,6 @@ public interface IReadDbContext
     /// <returns></returns>
     Task<TQueryModel?> GetByIdAsync<TQueryModel, TKey>(TKey id) where TQueryModel : IQueryModel;
 
-    /// <summary>
-    /// Creates collections in the database for all query models.
-    /// </summary>
-    /// <returns>A task representing the asynchronous creation of collections.</returns>
-    Task CreateCollectionsAsync<TQueryModel>(IEnumerable<TQueryModel> collections);
-    /// <summary>
-    /// Creates collection in the database for query models.
-    /// </summary>
-    /// <typeparam name="TQueryModel"></typeparam>
-    /// <param name="collection"></param>
-    /// <returns></returns>
-    Task CreateCollectionAsync<TQueryModel>(TQueryModel collection);
     /// <summary>
     /// Get read database context
     /// </summary>
