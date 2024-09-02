@@ -71,7 +71,7 @@ public interface IReadDbContext
     /// <param name="pageNumber"></param>
     /// <param name="pageSize"></param>
     /// <returns></returns>
-    Task<IEnumerable<TQueryModel>> SearchWildAsync<TQueryModel>(Dictionary<string, string> queries, 
+    Task<IEnumerable<TQueryModel>> WildSearchAsync<TQueryModel>(Dictionary<string, string> queries, 
                                                             int pageNumber = 0, 
                                                             int pageSize = 100)
         where TQueryModel : IQueryModel;
