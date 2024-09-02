@@ -77,6 +77,19 @@ public interface IReadDbContext
         where TQueryModel : IQueryModel;
 
     /// <summary>
+    /// Search document by multiple fields, it's fuzzy search
+    /// </summary>
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <param name="queries"></param>
+    /// <param name="pageNumber"></param>
+    /// <param name="pageSize"></param>
+    /// <returns></returns>
+    Task<IEnumerable<TQueryModel>> FuzzySearchAsync<TQueryModel>(Dictionary<string, string> queries,
+                                                        int pageNumber = 0,
+                                                        int pageSize = 100)
+        where TQueryModel : IQueryModel;
+
+    /// <summary>
     /// Get the generic database context for NoSQL
     /// </summary>
     /// <returns></returns>
