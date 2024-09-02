@@ -63,11 +63,22 @@ public interface IReadDbContext
     /// <returns>A task representing the asynchronous delete operation.</returns>
     Task DeleteAsync<TQueryModel>(Expression<Func<TQueryModel, bool>> deleteFilter)
         where TQueryModel : IQueryModel;
+    /// <summary>
+    /// Search document by multiple fields, it's wildcard search
+    /// </summary>
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <param name="queries"></param>
+    /// <param name="pageNumber"></param>
+    /// <param name="pageSize"></param>
+    /// <returns></returns>
+    Task<IEnumerable<TQueryModel>> SearchWildAsync<TQueryModel>(Dictionary<string, string> queries, 
+                                                            int pageNumber = 0, 
+                                                            int pageSize = 100)
+        where TQueryModel : IQueryModel;
 
     /// <summary>
-    /// Get read database context
+    /// Get the generic database context for NoSQL
     /// </summary>
-    /// <typeparam name="TContext"></typeparam>
     /// <returns></returns>
-    TContext GetDatabaseContext<TContext>();
+    object GetDatabaseContext();
 }
