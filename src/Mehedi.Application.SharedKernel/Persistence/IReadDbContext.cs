@@ -71,7 +71,7 @@ public interface IReadDbContext
     /// <param name="pageNumber"></param>
     /// <param name="pageSize"></param>
     /// <returns></returns>
-    Task<(int, IEnumerable<TQueryModel>)> WildSearchAsync<TQueryModel>(Dictionary<string, string> queries, 
+    Task<(long, IEnumerable<TQueryModel>)> WildSearchAsync<TQueryModel>(Dictionary<string, string> queries, 
                                                             int pageNumber = 0, 
                                                             int pageSize = 100)
         where TQueryModel : IQueryModel;
@@ -84,7 +84,7 @@ public interface IReadDbContext
     /// <param name="pageNumber"></param>
     /// <param name="pageSize"></param>
     /// <returns></returns>
-    Task<(int, IEnumerable<TQueryModel>)> FuzzySearchAsync<TQueryModel>(Dictionary<string, string> queries,
+    Task<(long, IEnumerable<TQueryModel>)> FuzzySearchAsync<TQueryModel>(Dictionary<string, string> queries,
                                                         int pageNumber = 0,
                                                         int pageSize = 100)
         where TQueryModel : IQueryModel;
