@@ -24,7 +24,7 @@ public interface IReadDbContext
     /// <param name="start"></param>
     /// <param name="pageSize"></param>
     /// <returns></returns>
-    Task<IEnumerable<TQueryModel>> GetCollectionAsync<TQueryModel>(int start = 0, int pageSize = 100) 
+    Task<IEnumerable<TQueryModel>> GetCollectionAsync<TQueryModel>(int start = 1, int pageSize = 100) 
         where TQueryModel : IQueryModel;
 
     /// <summary>
@@ -72,7 +72,7 @@ public interface IReadDbContext
     /// <param name="pageSize"></param>
     /// <returns></returns>
     Task<(long, IEnumerable<TQueryModel>)> WildSearchAsync<TQueryModel>(Dictionary<string, string> queries, 
-                                                            int pageNumber = 0, 
+                                                            int pageNumber = 1, 
                                                             int pageSize = 100)
         where TQueryModel : IQueryModel;
 
@@ -85,7 +85,7 @@ public interface IReadDbContext
     /// <param name="pageSize"></param>
     /// <returns></returns>
     Task<(long, IEnumerable<TQueryModel>)> FuzzySearchAsync<TQueryModel>(Dictionary<string, string> queries,
-                                                        int pageNumber = 0,
+                                                        int pageNumber = 1,
                                                         int pageSize = 100)
         where TQueryModel : IQueryModel;
 
