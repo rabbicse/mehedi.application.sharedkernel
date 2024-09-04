@@ -10,33 +10,6 @@ namespace Mehedi.Application.SharedKernel.Persistence;
 public interface IReadDbContext
 {
     /// <summary>
-    /// Gets the collection for the specified query model.
-    /// </summary>
-    /// <typeparam name="TQueryModel"></typeparam>
-    /// <returns></returns>
-    Task<(long, IEnumerable<TQueryModel>)> GetAllCollectionAsync<TQueryModel>() 
-        where TQueryModel : IQueryModel;
-
-    /// <summary>
-    /// Gets the collection for the specified query model with page.
-    /// </summary>
-    /// <typeparam name="TQueryModel"></typeparam>
-    /// <param name="start"></param>
-    /// <param name="pageSize"></param>
-    /// <returns></returns>
-    Task<(long, IEnumerable<TQueryModel>)> GetCollectionAsync<TQueryModel>(int start = 1, int pageSize = 100) 
-        where TQueryModel : IQueryModel;
-
-    /// <summary>
-    /// Gets the Query Model by id.
-    /// </summary>
-    /// <typeparam name="TQueryModel"></typeparam>
-    /// <typeparam name="TKey"></typeparam>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    Task<TQueryModel?> GetByIdAsync<TQueryModel, TKey>(TKey id) where TQueryModel : IQueryModel;
-
-    /// <summary>
     /// Upserts a query model into the database.
     /// </summary>
     /// <typeparam name="TQueryModel">The type of the query model.</typeparam>
@@ -63,6 +36,36 @@ public interface IReadDbContext
     /// <returns>A task representing the asynchronous delete operation.</returns>
     Task DeleteAsync<TQueryModel>(Expression<Func<TQueryModel, bool>> deleteFilter)
         where TQueryModel : IQueryModel;
+
+    /// <summary>
+    /// Gets the collection for the specified query model.
+    /// </summary>
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <returns></returns>
+    Task<(long, IEnumerable<TQueryModel>)> GetAllCollectionAsync<TQueryModel>() 
+        where TQueryModel : IQueryModel;
+
+    /// <summary>
+    /// Gets the collection for the specified query model with page.
+    /// </summary>
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <param name="pageNumber"></param>
+    /// <param name="pageSize"></param>
+    /// <returns></returns>
+    Task<(long, IEnumerable<TQueryModel>)> GetCollectionAsync<TQueryModel>(int pageNumber = 1, 
+                                                                           int pageSize = 100) 
+        where TQueryModel : IQueryModel;
+
+    /// <summary>
+    /// Gets the Query Model by id.
+    /// </summary>
+    /// <typeparam name="TQueryModel"></typeparam>
+    /// <typeparam name="TKey"></typeparam>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task<TQueryModel?> GetByIdAsync<TQueryModel, TKey>(TKey id) 
+        where TQueryModel : IQueryModel;
+
     /// <summary>
     /// Search document by multiple fields, it's wildcard search
     /// </summary>
@@ -72,8 +75,8 @@ public interface IReadDbContext
     /// <param name="pageSize"></param>
     /// <returns></returns>
     Task<(long, IEnumerable<TQueryModel>)> WildSearchAsync<TQueryModel>(Dictionary<string, string> queries, 
-                                                            int pageNumber = 1, 
-                                                            int pageSize = 100)
+                                                                        int pageNumber = 1, 
+                                                                        int pageSize = 100)
         where TQueryModel : IQueryModel;
 
     /// <summary>
@@ -85,8 +88,8 @@ public interface IReadDbContext
     /// <param name="pageSize"></param>
     /// <returns></returns>
     Task<(long, IEnumerable<TQueryModel>)> FuzzySearchAsync<TQueryModel>(Dictionary<string, string> queries,
-                                                        int pageNumber = 1,
-                                                        int pageSize = 100)
+                                                                        int pageNumber = 1,
+                                                                        int pageSize = 100)
         where TQueryModel : IQueryModel;
 
     /// <summary>
