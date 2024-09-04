@@ -14,7 +14,7 @@ public interface IReadDbContext
     /// </summary>
     /// <typeparam name="TQueryModel"></typeparam>
     /// <returns></returns>
-    Task<IEnumerable<TQueryModel>> GetAllCollectionAsync<TQueryModel>() 
+    Task<(long, IEnumerable<TQueryModel>)> GetAllCollectionAsync<TQueryModel>() 
         where TQueryModel : IQueryModel;
 
     /// <summary>
@@ -24,7 +24,7 @@ public interface IReadDbContext
     /// <param name="start"></param>
     /// <param name="pageSize"></param>
     /// <returns></returns>
-    Task<IEnumerable<TQueryModel>> GetCollectionAsync<TQueryModel>(int start = 1, int pageSize = 100) 
+    Task<(long, IEnumerable<TQueryModel>)> GetCollectionAsync<TQueryModel>(int start = 1, int pageSize = 100) 
         where TQueryModel : IQueryModel;
 
     /// <summary>
