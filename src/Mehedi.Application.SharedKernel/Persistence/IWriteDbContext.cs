@@ -19,5 +19,5 @@ public interface IWriteDbContext : IDisposable
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     /// <returns></returns>
-    IQueryable<TEntity> Query<TEntity>() where TEntity : class;   
+    IQueryable<TEntity> Entities<TEntity>() where TEntity : class;   
 }
