@@ -14,7 +14,7 @@ public interface IWriteDbContext : IDisposable
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
     /// <summary>
-    /// Set IQueryable to get entities dynamically
+    /// Set IQueryable to get persistence entities dynamically
     /// If application uses Entityframework then it'll useful
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
