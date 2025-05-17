@@ -12,4 +12,12 @@ public interface IWriteDbContext : IDisposable
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Set IQueryable to get entities dynamically
+    /// If application uses Entityframework then it'll useful
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <returns></returns>
+    IQueryable<TEntity> Query<TEntity>() where TEntity : class;   
 }
