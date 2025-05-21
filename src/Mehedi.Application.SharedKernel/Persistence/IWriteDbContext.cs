@@ -29,4 +29,18 @@ public interface IWriteDbContext : IDisposable
     /// <param name="parameters"></param>
     /// <returns></returns>
     Task<IEnumerable<TEntity>> FromSqlRawAsync<TEntity>(string sql, params object[] parameters) where TEntity : class;
+
+    /// <summary>
+    /// Add method to perform raw query with different result
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TResponse"></typeparam>
+    /// <param name="sql"></param>
+    /// <param name="parameters"></param>
+    /// <returns></returns>
+    Task<IEnumerable<TResponse>> FromSqlRawAsync<TEntity, TResponse>(
+     string sql,
+     params object[] parameters)
+     where TEntity : class
+     where TResponse : class;
 }
