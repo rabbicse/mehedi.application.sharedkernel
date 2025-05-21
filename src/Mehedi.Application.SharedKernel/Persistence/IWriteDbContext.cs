@@ -43,4 +43,16 @@ public interface IWriteDbContext : IDisposable
      params object[] parameters)
      where TEntity : class
      where TResponse : class;
+
+    /// <summary>
+    /// Run function/sp and return objects as own
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="functionName"></param>
+    /// <param name="parameters"></param>
+    /// <returns></returns>
+    Task<IEnumerable<T>> FromSqlFunctionAsync<T>(
+        string functionName, 
+        object parameters) 
+        where T : class;
 }
