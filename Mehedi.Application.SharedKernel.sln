@@ -9,12 +9,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E616BC31-A54
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1DD0A7BA-0EDC-409A-8247-8694D082A722}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mehedi.Application.SharedKernel.Tests", "tests\Mehedi.Application.SharedKernel.Tests\Mehedi.Application.SharedKernel.Tests.csproj", "{9175810D-3E9C-4F04-93D0-884E8F276DF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9175810D-3E9C-4F04-93D0-884E8F276DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9175810D-3E9C-4F04-93D0-884E8F276DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9175810D-3E9C-4F04-93D0-884E8F276DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9175810D-3E9C-4F04-93D0-884E8F276DF1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -24,6 +30,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{9175810D-3E9C-4F04-93D0-884E8F276DF1} = {1DD0A7BA-0EDC-409A-8247-8694D082A722}
 		{D4BD4386-0944-4973-A8F4-1D36BEFFEB08} = {E616BC31-A54D-4C60-A9CC-846BC423D4C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
