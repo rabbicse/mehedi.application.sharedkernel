@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Mehedi.Application.SharedKernel.Extensions;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -36,7 +36,7 @@ public class LoggingBehavior<TRequest, TResponse>(ILogger<LoggingBehavior<TReque
         var timer = new Stopwatch();
         timer.Start();
 
-        var response = await next();
+        var response = await next(cancellationToken);
 
         timer.Stop();
 
